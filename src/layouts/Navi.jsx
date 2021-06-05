@@ -1,7 +1,7 @@
 import React from "react";
 import CartSummary from "./CartSummary";
 import { Button, Container, Menu } from "semantic-ui-react";
-
+ 
 export default function Navi() {
   return (
     <div>
