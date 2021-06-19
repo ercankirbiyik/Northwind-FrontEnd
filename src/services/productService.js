@@ -8,4 +8,4 @@ export default class ProductService{
      getByProductName(productName){
         return axios.get("http://localhost:8080/api/products/getByProductName?productName="+ productName)
     }
-}
+} 

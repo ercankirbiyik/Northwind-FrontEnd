@@ -17,7 +17,7 @@ export default function ProductList() {
       .getProducts()
       .then(result => setProducts(result.data.data))
   }, []);
-
+ 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
     toast.success(`${product.productName} sepete eklendi!`)

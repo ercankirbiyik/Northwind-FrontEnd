@@ -12,7 +12,7 @@ export default function ProductDetail() {
     let productService = new ProductService()
     productService.getByProductName(name).then(result=>setProduct(result.data.data))
   },[])
-
+ 
 
   return (
     <div>
