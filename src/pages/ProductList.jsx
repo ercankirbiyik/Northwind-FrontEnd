@@ -1,36 +1,56 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Icon, Label, Menu, Table } from "semantic-ui-react";
+import { Button, Icon, Label, Menu, Table } from "semantic-ui-react";
 import ProductService from "../services/productService";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/actions/cartActions";
+import { toast } from "react-toastify";
 
 export default function ProductList() {
+  const dispatch = useDispatch();
+
   const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     let productService = new ProductService()
-    productService.getProducts().then(result=>setProducts(result.data.data))
-  },[])
+    productService
+      .getProducts()
+      .then(result => setProducts(result.data.data))
+  }, []);
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    toast.success(`${product.productName} sepete eklendi!`)
+  };
 
   return (
     <div>
       <Table celled>
-        <Table.Header>   
+        <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Product Name</Table.HeaderCell>
             <Table.HeaderCell>Unit Price</Table.HeaderCell>
             <Table.HeaderCell>Unit in Stock</Table.HeaderCell>
             <Table.HeaderCell>Product Description</Table.HeaderCell>
             <Table.HeaderCell>Category</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {products.map((product) => (
             <Table.Row key={product.id}>
-              <Table.Cell><Link to={`/products/${product.productName}`}>{product.productName}</Link></Table.Cell>
+              <Table.Cell>
+                <Link to={`/products/${product.productName}`}>
+                  {product.productName}
+                </Link>
+              </Table.Cell>
               <Table.Cell>{product.unitPrice}</Table.Cell>
               <Table.Cell>{product.unitsInStock}</Table.Cell>
               <Table.Cell>{product.quantityPerUnit}</Table.Cell>
               <Table.Cell>{product.category.categoryName}</Table.Cell>
+              <Table.Cell>
+                <Button onClick={() => handleAddToCart(product)}>Add to Cart</Button>
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
