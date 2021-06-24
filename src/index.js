@@ -10,13 +10,12 @@ import "react-toastify/dist/ReactToastify.min.css"
 
 
 const store = configureStore()
-ReactDOM.render(
+ReactDOM.render(   // tüm uygulamayı provider ile sarmalla diyorum (react-redux ile) burada bir store geç diyorum
     <Provider store={store}>
         <BrowserRouter>
             <App />
         </BrowserRouter>
-    </Provider>
-    ,
+    </Provider>,
     document.getElementById("root")
 );
 
@@ -24,3 +23,7 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+// root component app. ilk başlanan component
+// component drilling => componentleri yukardan aşağı / aşağıdan yukarı taşımak.

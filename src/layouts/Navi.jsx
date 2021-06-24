@@ -7,9 +7,11 @@ import { useHistory } from "react-router";
 import { useSelector } from 'react-redux';
 
 export default function Navi() {
+
   const { cartItems } = useSelector(state => state.cart)
   const [isAuthenticated, setIsAuthenticated] = useState(true)
   const history = useHistory()
+
   function handleSignOut() {
     setIsAuthenticated(false)
     history.push("/")
@@ -18,14 +20,13 @@ export default function Navi() {
   function handleSignIn() {
     setIsAuthenticated(true)
   }
- 
+
   return (
     <div>
       <Menu inverted fixed="top">
         <Container>
           <Menu.Item name="home" />
           <Menu.Item name="messages" />
-
           <Menu.Menu position="right">
             {cartItems.length > 0 && <CartSummary />}
             {isAuthenticated ? <SignedIn signOut={handleSignOut} bisey="1" />

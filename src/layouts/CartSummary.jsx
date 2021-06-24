@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export default function CartSummary() {
  
-  const { cartItems } = useSelector(state => state.cart)
+  const { cartItems } = useSelector(state => state.cart) //State'teki cartItemsı çekiyoruz
 
   return (
     <div>
@@ -13,7 +13,7 @@ export default function CartSummary() {
         <Dropdown.Menu>
           {
             cartItems.map((cartItem) => (
-              <Dropdown.Item>
+              <Dropdown.Item key = { cartItem.product.id}>
                 {cartItem.product.productName}
                 <Label>
                   {cartItem.quantity}
@@ -22,9 +22,10 @@ export default function CartSummary() {
             ))
           }
           <Dropdown.Divider />
-          <Dropdown.Item as={NavLink} to="/cart">Sepete git</Dropdown.Item>
+          <Dropdown.Item as={NavLink} to="/cart">Go to Cart</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
   )
 }
+//Sepete gitme işlemini react router dom elementi ile yapıyoruz!!

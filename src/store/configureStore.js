@@ -5,3 +5,4 @@ import rootReducer from "./rootReducer";
 export function configureStore() {
     return createStore(rootReducer,devToolsEnhancer())
 }
+

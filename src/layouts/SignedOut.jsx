@@ -1,13 +1,17 @@
 import React from 'react'
-import { Button, Menu } from 'semantic-ui-react'
+import { Menu, Button } from 'semantic-ui-react'
 
-export default function SignedOut({signIn}) {
+export default function SignedOut({ signedIn }) {
     return (
         <div>
             <Menu.Item>
-               <Button  onClick={signIn} primary>Login</Button>
-               <Button primary style={{marginLeft:'0.5em'}}>Register</Button> 
-            </Menu.Item>            
+                <Button
+                    onClick={signedIn} primary> Login
+                </Button>
+                <Button
+                    style={{ marginLeft: '0.7em' }}> Register  //Parametre olarak obje istendiği için style'da iki tane süslü parantez kullandık
+                </Button>
+            </Menu.Item>
         </div>
     )
 }

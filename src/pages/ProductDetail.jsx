@@ -1,18 +1,18 @@
-import React, { useState ,useEffect} from "react";
-import { useParams } from "react-router";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Button, Card, Image } from 'semantic-ui-react'
 import ProductService from "../services/productService";
 
 export default function ProductDetail() {
   let { name } = useParams();
-  
+
   const [product, setProduct] = useState({});
 
-  useEffect(()=>{
+  useEffect(() => {
     let productService = new ProductService()
-    productService.getByProductName(name).then(result=>setProduct(result.data.data))
-  },[])
- 
+    productService.getByProductName(name).then(result => setProduct(result.data.data))
+  }, [])
+
 
   return (
     <div>
@@ -22,7 +22,7 @@ export default function ProductDetail() {
             <Image
               floated="right"
               size="mini"
-              src=" "
+              src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
             />
             <Card.Header>{product.productName}</Card.Header>
             <Card.Meta>{product.category.categoryName}</Card.Meta>
