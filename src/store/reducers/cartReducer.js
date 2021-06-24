@@ -3,28 +3,28 @@ import { cartItems } from "../initialValues/cartItems";
 
 const initialState = {
   cartItems: cartItems,
-}; 
+};
 
 export default function cartReducer(state = initialState, { type, payload }) {
-  switch (type) { 
+  switch (type) {
 
     case ADD_TO_CART:
       let product = state.cartItems.find((c) => c.product.id === payload.id);
-      
+
       if (product) {
         product.quantity++;  // bunu yapınca bir bir artar quantity. ama referanslar değişmez. yani sepeti güncellemez. bu yüzden refransı güncellemek gerek. o yüzden spread operatörü gerekli
         return {
 
           ...state,
 
-          // yepyeni bir cart objesini döndürmüş oluyorsun. newliyorsun bir nevi.
+          // yeni bir cart objesini döndürmüş oluyoruz. newliyorsun bir nevi.
 
         };
       } else {
         return {  // sepette eleman yoksa, yepyeni bir obje oluştur. o zaman mevcut cartItems a yeni bir eleman ekleyip, yeni array yapacam.
-          
+
           ...state, // cartItems'ı ayırdım. sonra yeni bir array oluşturdum
-         
+
           cartItems: [...state.cartItems, { quantity: 1, product: payload }], // sadece bir elamanı değiştirmek istediğim için bu hareketi yapıyorum
           // [state'deki cartItems'ı spread et dedim]
           // payload'lada yenisi ekledim.
@@ -37,7 +37,7 @@ export default function cartReducer(state = initialState, { type, payload }) {
       return {
         ...state,
         cartItems: state.cartItems.filter((c) => c.product.id !== payload.id),
-     
+
       };
 
     default:

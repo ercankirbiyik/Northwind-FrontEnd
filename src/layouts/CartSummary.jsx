@@ -4,7 +4,7 @@ import { Dropdown } from "semantic-ui-react";
 import { useSelector } from 'react-redux';
 
 export default function CartSummary() {
-  
+
   const { cartItems } = useSelector(state => state.cart) //State'teki cartItemsı çekiyoruz
 
   return (
@@ -13,11 +13,9 @@ export default function CartSummary() {
         <Dropdown.Menu>
           {
             cartItems.map((cartItem) => (
-              <Dropdown.Item key = { cartItem.product.id}>
+              <Dropdown.Item key={cartItem.product.id}>
                 {cartItem.product.productName}
-                <Label>
-                  {cartItem.quantity}
-                </Label>
+                <Label>{cartItem.quantity}</Label>
               </Dropdown.Item>
             ))
           }

@@ -1,11 +1,12 @@
 // tüm statelerin toplandığı alanımız
 
 import { combineReducers} from "redux";
-import cartReducer from "./reducers/cartReducers";
+import cartReducer from "./reducers/cartReducer";
 
 
 const rootReducer = combineReducers({
-    cart : cartReducer,
+    cart: cartReducer,
+    //user: userReducer
 
 })
 export default rootReducer;
