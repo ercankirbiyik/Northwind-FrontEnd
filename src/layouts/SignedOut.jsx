@@ -4,7 +4,7 @@ import { Menu, Button } from 'semantic-ui-react'
 export default function SignedOut({ signedIn }) {
     return (
         <div>
-            <Menu.Item>
+            <Menu.Item> 
                 <Button
                     onClick={signedIn} primary> Login
                 </Button>

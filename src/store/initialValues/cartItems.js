@@ -3,3 +3,4 @@
 // amaç bunu her yerde tetikletmek.
 
 export const cartItems=[]
+ 

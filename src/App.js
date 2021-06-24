@@ -4,7 +4,6 @@ import 'semantic-ui-css/semantic.min.css'
 import { Container } from 'semantic-ui-react';
 import Navi from './layouts/Navi';
 
-
 function App() { //App isimli bir komponent arıyor.
   return ( 
     //className="App" ile app isminde bir css arıyor.

@@ -9,7 +9,8 @@ import ProductDetail from "../pages/ProductDetail";
 import CartDetail from "../pages/CartDetail";
 import { ToastContainer } from "react-toastify";
 import "animate.css/animate.min.css";
-import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css"; 
+
 
 
 

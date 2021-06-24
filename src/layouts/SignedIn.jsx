@@ -3,7 +3,7 @@ import { Dropdown, Menu,Image } from 'semantic-ui-react'
 
 export default function SignedIn({signedOut}) {
     return (
-        <div>
+        <div> 
             <Menu.Item>
                 <Image avatar spaced="right" src=" https://get.google.com/albumarchive/117303897415310468720/album/AF1QipMlQiDSmc2emFoFYwN3R0QWjTgajpMhHYFXNXOF/AF1QipNDpa23Cs0yefYvr4n9dZ5gE-FWTn7C7nPK7wVB"
                 ></Image>                

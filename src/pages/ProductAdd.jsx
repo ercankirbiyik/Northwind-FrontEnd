@@ -9,7 +9,7 @@ export default function ProductAdd() {
     const schema = Yup.object({
         productName: Yup.string().required("Product name is mandatory!"),
         unitPrice: Yup.number().required("The product price is mandatory!"),
-    });
+    }); 
 
     return (
         <div>

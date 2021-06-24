@@ -7,7 +7,7 @@ export default function Categories() {
       <Menu pointing vertical>
         <Menu.Item
           name="home"
-
+ 
         />
         <Menu.Item
           name="messages"

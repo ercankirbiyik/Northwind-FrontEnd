@@ -7,7 +7,7 @@ import { addToCart } from "../store/actions/cartActions";
 import { toast } from "react-toastify";
 
 export default function ProductList() {
-
+ 
   const dispatch = useDispatch(); //Burası çalıştırılacak fonksiyonun adını istemektedir
 
   const handleAddToCart = (product) => {
