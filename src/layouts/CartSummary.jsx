@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { Dropdown } from "semantic-ui-react";
 import { useSelector } from 'react-redux';
+import { Label } from "semantic-ui-react";
 
 export default function CartSummary() {
 
